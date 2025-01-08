@@ -15,7 +15,7 @@ mongoose.connect("mongodb+srv://worknf00:rrr1234@cluster0.8tarv.mongodb.net/note
         res.json(message);
     });
 
-    const noteRounter = require("../routes/Note");
+    const noteRounter = require("../src/routes/Note");
     app.use("/notes", noteRounter);
 
 });
