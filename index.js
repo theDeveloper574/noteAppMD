@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 const mongoose = require("mongoose");
-const Note = require("../models/Note");
+const Note = require("./models/Note");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -15,7 +15,7 @@ mongoose.connect("mongodb+srv://worknf00:rrr1234@cluster0.8tarv.mongodb.net/note
         res.json(message);
     });
 
-    const noteRounter = require("../routes/Note");
+    const noteRounter = require("./routes/Note");
     app.use("/notes", noteRounter);
 
 });
