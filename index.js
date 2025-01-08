@@ -12,11 +12,11 @@ mongoose.connect("mongodb+srv://worknf00:rrr1234@cluster0.8tarv.mongodb.net/note
 
     app.get(("/"), function (req, res) {
         const message = { message: "Api works!" };
-        res.json(message);
+        res.json({ message: "APi WOrkds!" });
     });
 
     const noteRounter = require("./routes/Note");
-    app.use("/notes", noteRounter);
+    app.use("/api", noteRounter);
 
 });
 const PORT = process.env.PORT || 5000;
