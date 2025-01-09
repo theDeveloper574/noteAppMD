@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 
 const mongoose = require("mongoose");
-const Note = require("./models/Note");
+const Note = require("../models/Note");
 const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -12,16 +12,16 @@ mongoose.connect("mongodb+srv://worknf00:rrr1234@cluster0.8tarv.mongodb.net/note
 
     app.get(("/"), function (req, res) {
         const message = { message: "Api works!" };
-        res.json({ message: "APi WOrkds!" });
+        res.json({ message: "APi WOrkds redeploy checks!" });
     });
 
-    const noteRounter = require("./routes/Note");
+    const noteRounter = require("../routes/Note");
     app.use("/api", noteRounter);
 
 });
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, function () {
-    console.log("Server stared PORT: " + PORT);
+    console.log("Server stared PORT: " + 300);
 });
 
 
